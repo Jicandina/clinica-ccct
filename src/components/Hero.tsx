@@ -1,26 +1,56 @@
-import { lazy, Suspense } from 'react'
-import { motion } from 'framer-motion'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Shield, Star, HeartPulse } from 'lucide-react'
 
 const OrbScene = lazy(() => import('./3d/OrbScene'))
 
-const stats = [
-  { icon: HeartPulse, value: '34', label: 'Especialidades médicas' },
-  { icon: Star,       value: '15+', label: 'Años de experiencia' },
-  { icon: Shield,     value: '100%', label: 'Comprometidos contigo' },
-]
+function useCounter(target: number, duration = 1800, active = true) {
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    if (!active) return
+    let start: number | null = null
+    const step = (ts: number) => {
+      if (!start) start = ts
+      const progress = Math.min((ts - start) / duration, 1)
+      setValue(Math.floor(progress * target))
+      if (progress < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [target, duration, active])
+  return value
+}
+
+function AnimatedStat({ icon: Icon, value, suffix, label }: { icon: any; value: number; suffix?: string; label: string }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true })
+  const count = useCounter(value, 1600, inView)
+  return (
+    <div ref={ref} className="text-center lg:text-left">
+      <Icon className="w-4 h-4 text-verde-400 mb-2 mx-auto lg:mx-0" />
+      <p className="text-2xl font-bold text-white tabular-nums">
+        {count}{suffix}
+      </p>
+      <p className="text-[11px] text-white/40 leading-tight mt-0.5">{label}</p>
+    </div>
+  )
+}
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#050f05]">
-      {/* Background layers */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(26,92,26,0.25)_0%,transparent_60%)]" />
+        {/* Medical photo with heavy dark overlay */}
+        <img
+          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(26,92,26,0.28)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(46,139,46,0.12)_0%,transparent_50%)]" />
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-verde-600/40 to-transparent" />
-
         {/* Grid */}
-        <div className="absolute inset-0 opacity-[0.03]"
+        <div className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage: `linear-gradient(rgba(46,139,46,1) 1px, transparent 1px), linear-gradient(90deg, rgba(46,139,46,1) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
@@ -32,7 +62,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 0.7 }}
+        transition={{ delay: 1.3, duration: 0.7 }}
         className="absolute left-6 top-1/3 hidden xl:block z-20"
       >
         <FloatingBadge icon="🏥" title="Diagnóstico" sub="Imagen de alta precisión" delay={0} />
@@ -40,7 +70,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.4, duration: 0.7 }}
+        transition={{ delay: 1.5, duration: 0.7 }}
         className="absolute right-6 top-1/3 hidden xl:block z-20"
       >
         <FloatingBadge icon="🧬" title="Laboratorio" sub="Resultados mismo día" delay={1} />
@@ -48,10 +78,10 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.6, duration: 0.7 }}
+        transition={{ delay: 1.7, duration: 0.7 }}
         className="absolute left-10 bottom-1/3 hidden xl:block z-20"
       >
-        <FloatingBadge icon="💊" title="Farmacia" sub="Nivel C1 · CCCT" delay={2} />
+        <FloatingBadge icon="🩺" title="34 especialidades" sub="Atención integral" delay={2} />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16">
@@ -112,20 +142,16 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Stats */}
+            {/* Animated stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="grid grid-cols-3 gap-6 max-w-sm mx-auto lg:mx-0"
             >
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="text-center lg:text-left">
-                  <Icon className="w-4 h-4 text-verde-400 mb-2 mx-auto lg:mx-0" />
-                  <p className="text-2xl font-bold text-white">{value}</p>
-                  <p className="text-[11px] text-white/40 leading-tight mt-0.5">{label}</p>
-                </div>
-              ))}
+              <AnimatedStat icon={HeartPulse} value={34} label="Especialidades" />
+              <AnimatedStat icon={Star} value={15} suffix="+" label="Años de exp." />
+              <AnimatedStat icon={Shield} value={100} suffix="%" label="Comprometidos" />
             </motion.div>
           </div>
 
@@ -152,8 +178,8 @@ export default function Hero() {
         href="#servicios"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-verde-400 transition-colors group"
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-verde-400 transition-colors"
       >
         <span className="text-[10px] font-medium tracking-widest uppercase">Descubrir</span>
         <div className="w-5 h-8 border border-current rounded-full flex justify-center pt-1.5">
