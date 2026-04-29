@@ -2,7 +2,7 @@ import { Phone, Clock, MapPin } from 'lucide-react'
 
 export default function TopBanner() {
   return (
-    <div className="bg-[#050f05] border-b border-verde-600/25 text-white text-xs py-2 px-4 hidden md:block">
+    <div className="fixed top-0 inset-x-0 z-[60] bg-[#050f05] border-b border-verde-600/25 text-white text-xs py-2 px-4 hidden md:block">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-1.5 text-white/80">

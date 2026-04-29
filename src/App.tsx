@@ -12,7 +12,6 @@ import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import ScrollProgress from './components/ScrollProgress'
-import CustomCursor from './components/CustomCursor'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import './App.css'
 
@@ -21,7 +20,6 @@ export default function App() {
     <>
       <LoadingScreen />
       <ScrollProgress />
-      <CustomCursor />
       <div className="min-h-screen">
         <TopBanner />
         <Navbar />

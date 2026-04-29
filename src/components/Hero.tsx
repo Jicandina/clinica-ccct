@@ -84,7 +84,7 @@ export default function Hero() {
         <FloatingBadge icon={Stethoscope} title="34 especialidades" sub="Atención integral" delay={2} />
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 md:pt-36 pb-16">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
 
           {/* Left text */}
