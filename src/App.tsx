@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import ScrollProgress from './components/ScrollProgress'
 import WhatsAppFloat from './components/WhatsAppFloat'
+import ChatWidget from './components/ChatWidget'
 import './App.css'
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
         <Footer />
       </div>
       <WhatsAppFloat />
+      <ChatWidget />
     </>
   )
 }
