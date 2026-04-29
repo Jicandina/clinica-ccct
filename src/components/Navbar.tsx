@@ -98,7 +98,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-white/70 hover:text-verde-300 transition-colors font-medium text-sm border-b border-white/5"
+                  className="flex items-center min-h-[44px] py-2 text-white/70 hover:text-verde-300 transition-colors font-medium text-sm border-b border-white/5 cursor-pointer"
                 >
                   {l.label}
                 </a>

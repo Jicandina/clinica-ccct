@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Search, Info } from 'lucide-react'
+import { Search, Info, Activity, ScanLine, Brain, FlaskConical, ClipboardList } from 'lucide-react'
 import {
   ecosonogramas, radiografias, tomografias, laboratorio,
   bs, TASA_BCV, type Servicio,
 } from '../data/precios'
 
 const categorias = [
-  { key: 'eco', label: 'Ecosonogramas', emoji: '🔬', data: ecosonogramas },
-  { key: 'rx',  label: 'Radiografías',  emoji: '🩻', data: radiografias },
-  { key: 'tc',  label: 'Tomografías',   emoji: '🧠', data: tomografias },
-  { key: 'lab', label: 'Laboratorio',   emoji: '🧪', data: laboratorio },
+  { key: 'eco', label: 'Ecosonogramas', icon: Activity,     data: ecosonogramas },
+  { key: 'rx',  label: 'Radiografías',  icon: ScanLine,     data: radiografias },
+  { key: 'tc',  label: 'Tomografías',   icon: Brain,        data: tomografias },
+  { key: 'lab', label: 'Laboratorio',   icon: FlaskConical, data: laboratorio },
 ]
 
 export default function Precios() {
@@ -57,20 +57,23 @@ export default function Precios() {
           transition={{ delay: 0.2 }}
           className="flex flex-wrap gap-2 justify-center mb-6"
         >
-          {categorias.map((c) => (
-            <button
-              key={c.key}
-              onClick={() => { setCat(c.key); setQuery(''); setExpanded(null) }}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                cat === c.key
-                  ? 'bg-verde-600 text-white shadow-lg shadow-verde-600/30'
-                  : 'glass border border-white/10 text-white/50 hover:text-white hover:border-verde-500/30'
-              }`}
-            >
-              <span>{c.emoji}</span>
-              {c.label}
-            </button>
-          ))}
+          {categorias.map((c) => {
+            const Icon = c.icon
+            return (
+              <button
+                key={c.key}
+                onClick={() => { setCat(c.key); setQuery(''); setExpanded(null) }}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer min-h-[44px] ${
+                  cat === c.key
+                    ? 'bg-verde-600 text-white shadow-lg shadow-verde-600/30'
+                    : 'glass border border-white/10 text-white/50 hover:text-white hover:border-verde-500/30'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {c.label}
+              </button>
+            )
+          })}
         </motion.div>
 
         {/* Search */}
@@ -176,7 +179,7 @@ function FilaServicio({ servicio, zebra, expanded, onToggle }: {
           >
             <div className="px-5 pb-3 pt-0">
               <div className="flex items-start gap-2 bg-verde-500/8 border border-verde-500/15 rounded-xl px-4 py-3">
-                <span className="text-verde-400 text-xs mt-0.5">📋</span>
+                <ClipboardList className="w-3.5 h-3.5 text-verde-400 mt-0.5 flex-shrink-0" />
                 <p className="text-verde-300/80 text-xs leading-relaxed">
                   <span className="font-semibold text-verde-400">Preparación: </span>
                   {servicio.requerimientos}

@@ -1,6 +1,6 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Shield, Star, HeartPulse } from 'lucide-react'
+import { Shield, Star, HeartPulse, ScanSearch, Microscope, Stethoscope } from 'lucide-react'
 
 const OrbScene = lazy(() => import('./3d/OrbScene'))
 
@@ -65,7 +65,7 @@ export default function Hero() {
         transition={{ delay: 1.3, duration: 0.7 }}
         className="absolute left-6 top-1/3 hidden xl:block z-20"
       >
-        <FloatingBadge icon="🏥" title="Diagnóstico" sub="Imagen de alta precisión" delay={0} />
+        <FloatingBadge icon={ScanSearch} title="Diagnóstico" sub="Imagen de alta precisión" delay={0} />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: 30 }}
@@ -73,7 +73,7 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.7 }}
         className="absolute right-6 top-1/3 hidden xl:block z-20"
       >
-        <FloatingBadge icon="🧬" title="Laboratorio" sub="Resultados mismo día" delay={1} />
+        <FloatingBadge icon={Microscope} title="Laboratorio" sub="Resultados mismo día" delay={1} />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -81,7 +81,7 @@ export default function Hero() {
         transition={{ delay: 1.7, duration: 0.7 }}
         className="absolute left-10 bottom-1/3 hidden xl:block z-20"
       >
-        <FloatingBadge icon="🩺" title="34 especialidades" sub="Atención integral" delay={2} />
+        <FloatingBadge icon={Stethoscope} title="34 especialidades" sub="Atención integral" delay={2} />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16">
@@ -190,14 +190,16 @@ export default function Hero() {
   )
 }
 
-function FloatingBadge({ icon, title, sub, delay }: { icon: string; title: string; sub: string; delay: number }) {
+function FloatingBadge({ icon: Icon, title, sub, delay }: { icon: React.ComponentType<{ className?: string }>; title: string; sub: string; delay: number }) {
   return (
     <motion.div
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 4 + delay, repeat: Infinity, ease: 'easeInOut', delay }}
       className="glass rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl shadow-black/40 min-w-[180px]"
     >
-      <span className="text-2xl">{icon}</span>
+      <div className="w-9 h-9 rounded-xl bg-verde-500/20 flex items-center justify-center flex-shrink-0">
+        <Icon className="w-5 h-5 text-verde-400" />
+      </div>
       <div>
         <p className="text-white text-sm font-semibold leading-none">{title}</p>
         <p className="text-white/40 text-[11px] mt-0.5">{sub}</p>
