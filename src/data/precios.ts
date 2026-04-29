@@ -1,7 +1,5 @@
-export const TASA_BCV = 484
-
-export function bs(usd: number) {
-  return Math.round(usd * TASA_BCV).toLocaleString('es-VE')
+export function bs(usd: number, tasa: number) {
+  return Math.round(usd * tasa).toLocaleString('es-VE')
 }
 
 export interface Servicio {

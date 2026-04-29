@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Search, Info, Activity, ScanLine, Brain, FlaskConical, ClipboardList } from 'lucide-react'
+import { Search, Info, Activity, ScanLine, Brain, FlaskConical, ClipboardList, RefreshCw } from 'lucide-react'
 import {
   ecosonogramas, radiografias, tomografias, laboratorio,
-  bs, TASA_BCV, type Servicio,
+  bs, type Servicio,
 } from '../data/precios'
+import { useBCVRate } from '../hooks/useBCVRate'
 
 const categorias = [
   { key: 'eco', label: 'Ecosonogramas', icon: Activity,     data: ecosonogramas },
@@ -19,11 +20,16 @@ export default function Precios() {
   const [cat, setCat] = useState('eco')
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState<string | null>(null)
+  const { tasa, fecha, loading, error, refresh } = useBCVRate()
 
   const actual = categorias.find((c) => c.key === cat)!
   const filtered = actual.data.filter((s) =>
     s.nombre.toLowerCase().includes(query.toLowerCase())
   )
+
+  const fechaLabel = fecha
+    ? new Date(fecha).toLocaleDateString('es-VE', { day: '2-digit', month: 'short', year: 'numeric' })
+    : null
 
   return (
     <section id="precios" className="py-24 bg-[#050f05] relative overflow-hidden">
@@ -44,10 +50,40 @@ export default function Precios() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             Precios <span className="gradient-text">transparentes</span>
           </h2>
-          <p className="text-white/40 text-lg max-w-xl mx-auto">
-            Sin sorpresas. Todos los precios en USD y Bs. · Tasa BCV:{' '}
-            <span className="text-verde-400 font-semibold">{TASA_BCV} Bs/$</span>
-          </p>
+
+          {/* Tasa BCV en vivo */}
+          <div className="inline-flex items-center gap-3 mt-2 px-5 py-2.5 rounded-2xl glass border border-white/8">
+            {loading ? (
+              <span className="text-white/30 text-sm">Cargando tasa BCV...</span>
+            ) : error ? (
+              <>
+                <span className="text-white/30 text-sm">Tasa BCV no disponible</span>
+                <button onClick={refresh} className="text-verde-400 hover:text-verde-300 transition-colors cursor-pointer" aria-label="Reintentar">
+                  <RefreshCw className="w-3.5 h-3.5" />
+                </button>
+              </>
+            ) : (
+              <>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-verde-400 animate-pulse" />
+                  <span className="text-white/40 text-xs uppercase tracking-widest font-semibold">Tasa BCV</span>
+                </span>
+                <span className="text-verde-400 font-bold text-lg tabular-nums">
+                  {tasa.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bs/$
+                </span>
+                {fechaLabel && (
+                  <span className="text-white/25 text-[11px]">· {fechaLabel}</span>
+                )}
+                <button
+                  onClick={refresh}
+                  className="text-white/20 hover:text-verde-400 transition-colors cursor-pointer ml-1"
+                  aria-label="Actualizar tasa"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                </button>
+              </>
+            )}
+          </div>
         </motion.div>
 
         {/* Category tabs */}
@@ -100,7 +136,6 @@ export default function Precios() {
           transition={{ delay: 0.35 }}
           className="rounded-2xl overflow-hidden border border-white/8"
         >
-          {/* Header */}
           <div className="grid grid-cols-12 px-5 py-3 bg-verde-900/40 border-b border-white/8">
             <span className="col-span-7 text-[11px] font-semibold text-white/40 uppercase tracking-widest">Estudio / Examen</span>
             <span className="col-span-2 text-right text-[11px] font-semibold text-white/40 uppercase tracking-widest">USD</span>
@@ -118,11 +153,11 @@ export default function Precios() {
               {filtered.length === 0 && (
                 <div className="py-12 text-center text-white/25 text-sm">No se encontraron resultados.</div>
               )}
-
               {filtered.map((s, i) => (
                 <FilaServicio
                   key={s.nombre}
                   servicio={s}
+                  tasa={tasa}
                   zebra={i % 2 === 0}
                   expanded={expanded === s.nombre}
                   onToggle={() => setExpanded(expanded === s.nombre ? null : s.nombre)}
@@ -145,8 +180,8 @@ export default function Precios() {
   )
 }
 
-function FilaServicio({ servicio, zebra, expanded, onToggle }: {
-  servicio: Servicio; zebra: boolean; expanded: boolean; onToggle: () => void
+function FilaServicio({ servicio, tasa, zebra, expanded, onToggle }: {
+  servicio: Servicio; tasa: number; zebra: boolean; expanded: boolean; onToggle: () => void
 }) {
   const hasReq = !!servicio.requerimientos
   return (
@@ -165,7 +200,7 @@ function FilaServicio({ servicio, zebra, expanded, onToggle }: {
           <span className="text-verde-400 font-bold text-sm">${servicio.precio}</span>
         </div>
         <div className="col-span-3 text-right">
-          <span className="text-white/40 text-xs">{bs(servicio.precio)} Bs.</span>
+          <span className="text-white/40 text-xs">{bs(servicio.precio, tasa)} Bs.</span>
         </div>
       </div>
       <AnimatePresence>
