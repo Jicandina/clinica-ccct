@@ -80,6 +80,10 @@ export async function onRequestOptions(): Promise<Response> {
 export async function onRequestPost(context: { request: Request; env: Env }): Promise<Response> {
   const json = { ...CORS, 'Content-Type': 'application/json' }
 
+  if (!context.env.ANTHROPIC_API_KEY) {
+    return new Response(JSON.stringify({ reply: '[DEBUG] No API key found in env' }), { status: 500, headers: json })
+  }
+
   try {
     const { messages } = await context.request.json() as { messages: Message[] }
 
@@ -107,9 +111,10 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
     const reply = data.content?.[0]?.text ?? 'Lo siento, hubo un error. Por favor intenta de nuevo.'
 
     return new Response(JSON.stringify({ reply }), { headers: json })
-  } catch {
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
     return new Response(
-      JSON.stringify({ reply: 'Lo siento, hubo un error de conexión. Por favor llama al +58 424 168 4657.' }),
+      JSON.stringify({ reply: `[DEBUG] ${msg}` }),
       { status: 500, headers: json }
     )
   }
