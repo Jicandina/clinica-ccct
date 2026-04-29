@@ -91,7 +91,7 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5',
+        model: 'claude-sonnet-4-6',
         max_tokens: 600,
         system: SYSTEM_PROMPT,
         messages,
