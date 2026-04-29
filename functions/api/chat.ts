@@ -61,16 +61,14 @@ Alergología, Cardiología, Cirugía Cardiovascular, Cirugía General, Cirugía 
 6. Cuando respondas precios, incluye la preparación previa si aplica.`
 
 interface Env {
-  ANTHROPIC_API_KEY: string
+  AI: {
+    run: (model: string, options: { messages: { role: string; content: string }[]; max_tokens: number }) => Promise<{ response?: string }>
+  }
 }
 
 interface Message {
   role: 'user' | 'assistant'
   content: string
-}
-
-interface AnthropicResponse {
-  content?: { type: string; text: string }[]
 }
 
 export async function onRequestOptions(): Promise<Response> {
@@ -83,28 +81,15 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
   try {
     const { messages } = await context.request.json() as { messages: Message[] }
 
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': context.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5',
-        max_tokens: 600,
-        system: SYSTEM_PROMPT,
-        messages,
-      }),
+    const result = await context.env.AI.run('@cf/meta/llama-3.1-8b-instruct', {
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        ...messages,
+      ],
+      max_tokens: 600,
     })
 
-    if (!res.ok) {
-      const errText = await res.text()
-      throw new Error(`Anthropic ${res.status}: ${errText}`)
-    }
-
-    const data = await res.json() as AnthropicResponse
-    const reply = data.content?.[0]?.text ?? 'Lo siento, hubo un error. Por favor intenta de nuevo.'
+    const reply = result.response ?? 'Lo siento, hubo un error. Por favor intenta de nuevo.'
 
     return new Response(JSON.stringify({ reply }), { headers: json })
   } catch {
