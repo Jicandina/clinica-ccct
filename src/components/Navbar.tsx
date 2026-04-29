@@ -7,6 +7,7 @@ const links = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Especialidades', href: '#especialidades' },
   { label: 'Precios', href: '#precios' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -33,13 +34,9 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18 py-4">
-          <a href="#inicio" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-full bg-verde-500/20 border border-verde-500/40 flex items-center justify-center group-hover:bg-verde-500/30 transition-colors">
-              <div className="w-3 h-3 rounded-full bg-verde-400" />
-            </div>
-            <div>
-              <p className="text-white font-bold text-sm leading-none">Clínica CCCT</p>
-              <p className="text-verde-400 text-[10px] font-medium tracking-widest uppercase leading-none mt-0.5">Caracas · Venezuela</p>
+          <a href="#inicio" className="flex items-center gap-2 group">
+            <div className="bg-white rounded-lg px-1.5 py-0.5 flex items-center group-hover:opacity-90 transition-opacity">
+              <img src="/logo.png" alt="Clínica CCCT" className="h-8 w-auto" />
             </div>
           </a>
 

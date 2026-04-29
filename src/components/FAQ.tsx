@@ -39,7 +39,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="py-24 bg-[#050f05] relative overflow-hidden">
+    <section id="faq" className="py-24 bg-[#050f05] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_50%,rgba(26,92,26,0.1)_0%,transparent_60%)]" />
 
       <div className="max-w-3xl mx-auto px-6 relative z-10" ref={ref}>
