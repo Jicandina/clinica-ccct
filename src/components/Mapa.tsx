@@ -77,7 +77,7 @@ export default function Mapa() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=CCCT+Chuao+Caracas"
+              href="https://maps.google.com/?q=Clínica+CCCT+Caracas"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full bg-verde-600 hover:bg-verde-500 text-white font-semibold py-3 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-verde-500/30 text-sm"
@@ -97,7 +97,7 @@ export default function Mapa() {
             <div className="absolute inset-0 bg-verde-900/20 z-10 pointer-events-none rounded-2xl" />
             <iframe
               title="Clínica CCCT en Google Maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.3219!2d-66.8608!3d10.4881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a5892e9c22b43%3A0xe7f8e9ba16ebf36c!2sCentro%20Ciudad%20Comercial%20Tamanaco%20(CCCT)!5e0!3m2!1ses-419!2sve!4v1714340000000!5m2!1ses-419!2sve"
+              src="https://maps.google.com/maps?q=Cl%C3%ADnica+CCCT+Caracas&output=embed&z=17"
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'invert(90%) hue-rotate(140deg) saturate(0.4) brightness(0.8)' }}
