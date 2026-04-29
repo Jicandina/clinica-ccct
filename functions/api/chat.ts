@@ -91,14 +91,17 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: 'claude-haiku-4-5',
         max_tokens: 600,
         system: SYSTEM_PROMPT,
         messages,
       }),
     })
 
-    if (!res.ok) throw new Error(`Anthropic ${res.status}`)
+    if (!res.ok) {
+      const errText = await res.text()
+      throw new Error(`Anthropic ${res.status}: ${errText}`)
+    }
 
     const data = await res.json() as AnthropicResponse
     const reply = data.content?.[0]?.text ?? 'Lo siento, hubo un error. Por favor intenta de nuevo.'
