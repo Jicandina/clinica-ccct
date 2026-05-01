@@ -1,6 +1,52 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, type ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send, Bot, Sparkles } from 'lucide-react'
+
+function renderInline(text: string): ReactNode[] {
+  const parts: ReactNode[] = []
+  const regex = /\*\*(.+?)\*\*|\*(.+?)\*/g
+  let last = 0
+  let m: RegExpExecArray | null
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index))
+    if (m[1] !== undefined) parts.push(<strong key={m.index} className="font-semibold text-white">{m[1]}</strong>)
+    else parts.push(<em key={m.index}>{m[2]}</em>)
+    last = regex.lastIndex
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts
+}
+
+function renderMarkdown(text: string): ReactNode {
+  const lines = text.split('\n')
+  const out: ReactNode[] = []
+  let i = 0
+  while (i < lines.length) {
+    const line = lines[i]
+    if (line.trim() === '') { i++; continue }
+    if (/^[-•*]\s+/.test(line)) {
+      const items: string[] = []
+      while (i < lines.length && /^[-•*]\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^[-•*]\s+/, ''))
+        i++
+      }
+      out.push(<ul key={`ul${i}`} className="list-disc pl-4 space-y-0.5 mt-1">{items.map((it, j) => <li key={j}>{renderInline(it)}</li>)}</ul>)
+      continue
+    }
+    if (/^\d+\.\s+/.test(line)) {
+      const items: string[] = []
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^\d+\.\s+/, ''))
+        i++
+      }
+      out.push(<ol key={`ol${i}`} className="list-decimal pl-4 space-y-0.5 mt-1">{items.map((it, j) => <li key={j}>{renderInline(it)}</li>)}</ol>)
+      continue
+    }
+    out.push(<p key={`p${i}`} className={out.length > 0 ? 'mt-1.5' : ''}>{renderInline(line)}</p>)
+    i++
+  }
+  return <>{out}</>
+}
 
 interface Message {
   role: 'user' | 'assistant'
@@ -122,7 +168,7 @@ export default function ChatWidget() {
                           }
                     }
                   >
-                    {msg.content}
+                    <div className="text-sm leading-relaxed">{renderMarkdown(msg.content)}</div>
                   </div>
                 </div>
               ))}
