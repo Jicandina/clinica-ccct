@@ -2,7 +2,11 @@ import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Shield, Star, HeartPulse, ScanSearch, Microscope, Stethoscope } from 'lucide-react'
 
-const OrbScene = lazy(() => import('./3d/OrbScene'))
+const OrbScene = lazy(() =>
+  window.innerWidth >= 768
+    ? import('./3d/OrbScene')
+    : Promise.resolve({ default: () => React.createElement(React.Fragment) })
+)
 
 function useCounter(target: number, duration = 1800, active = true) {
   const [value, setValue] = useState(0)
