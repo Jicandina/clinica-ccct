@@ -211,7 +211,10 @@ export default function ChatWidget() {
       const payload = next.filter(m => !m.synthetic)
       const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Chat-Token': import.meta.env.VITE_CHAT_TOKEN ?? '',
+        },
         body: JSON.stringify({ messages: payload }),
       })
       const data = await res.json() as { reply: string }

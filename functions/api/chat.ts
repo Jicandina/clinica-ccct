@@ -217,6 +217,7 @@ interface RateEntry { count: number; resetAt: number }
 
 interface Env {
   ANTHROPIC_API_KEY: string
+  CHAT_TOKEN: string
   RATE_LIMIT_KV?: KVNamespace
 }
 
@@ -269,6 +270,12 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
 
   const cors = corsHeaders(origin)
   const headers = { ...cors, 'Content-Type': 'application/json' }
+
+  // Validar token secreto
+  const token = request.headers.get('X-Chat-Token') ?? ''
+  if (!env.CHAT_TOKEN || token !== env.CHAT_TOKEN) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers })
+  }
 
   // Rate limiting por IP
   const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown'
