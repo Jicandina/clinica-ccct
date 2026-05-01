@@ -175,7 +175,7 @@ const QUICK_CHIPS = [
   { label: 'Precios de consulta', msg: '¿Cuáles son los precios de las consultas médicas?' },
   { label: 'Horarios de atención', msg: '¿Cuál es el horario de atención de la clínica?' },
   { label: 'Especialidades disponibles', msg: '¿Qué especialidades médicas tienen?' },
-  { label: 'Agendar una cita', msg: '¿Cómo puedo agendar una cita?' },
+  { label: 'Agendar una cita', msg: 'Quiero agendar una cita' },
 ]
 
 // ─── Component ─────────────────────────────────────────────────────────────────
