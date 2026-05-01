@@ -1,7 +1,22 @@
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
+const ALLOWED_ORIGINS = new Set([
+  'https://clinica-ccct1.pages.dev',
+  'http://localhost:5173',
+  'http://localhost:4173',
+])
+
+const RATE_LIMIT = 30       // requests per IP
+const RATE_WINDOW_SECS = 3600 // per hour
+
+function corsHeaders(origin: string | null): Record<string, string> {
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    return {
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Vary': 'Origin',
+    }
+  }
+  return {}
 }
 
 const SYSTEM_PROMPT = `Eres el asistente virtual de Clínica CCCT, una clínica privada ubicada en el Centro Comercial Ciudad Tamanaco (CCCT), Caracas, Venezuela. Tu función es responder preguntas de pacientes de forma amable, concisa y profesional.
@@ -198,8 +213,11 @@ Después del enlace indica: "La recepción confirmará la disponibilidad."
 9. No termines cada respuesta con "¿Necesitas algo más? 😊" — solo cuando sea natural hacerlo.
 10. Para listar médicos usa este formato: - Nombre Apellido — Horario`
 
+interface RateEntry { count: number; resetAt: number }
+
 interface Env {
   ANTHROPIC_API_KEY: string
+  RATE_LIMIT_KV?: KVNamespace
 }
 
 interface Message {
@@ -211,20 +229,74 @@ interface AnthropicResponse {
   content?: { type: string; text: string }[]
 }
 
-export async function onRequestOptions(): Promise<Response> {
-  return new Response(null, { status: 204, headers: CORS })
+async function isAllowed(ip: string, kv: KVNamespace | undefined): Promise<boolean> {
+  if (!kv) return true // KV no configurado — omite rate limiting
+  const key = `rl:${ip}`
+  const now = Date.now()
+  const raw = await kv.get(key)
+  if (raw) {
+    const entry: RateEntry = JSON.parse(raw)
+    if (now < entry.resetAt) {
+      if (entry.count >= RATE_LIMIT) return false
+      await kv.put(key, JSON.stringify({ count: entry.count + 1, resetAt: entry.resetAt }), {
+        expirationTtl: Math.ceil((entry.resetAt - now) / 1000),
+      })
+    } else {
+      await kv.put(key, JSON.stringify({ count: 1, resetAt: now + RATE_WINDOW_SECS * 1000 }), {
+        expirationTtl: RATE_WINDOW_SECS,
+      })
+    }
+  } else {
+    await kv.put(key, JSON.stringify({ count: 1, resetAt: now + RATE_WINDOW_SECS * 1000 }), {
+      expirationTtl: RATE_WINDOW_SECS,
+    })
+  }
+  return true
+}
+
+export async function onRequestOptions(context: { request: Request }): Promise<Response> {
+  const origin = context.request.headers.get('Origin')
+  return new Response(null, { status: 204, headers: corsHeaders(origin) })
 }
 
 export async function onRequestPost(context: { request: Request; env: Env }): Promise<Response> {
-  const json = { ...CORS, 'Content-Type': 'application/json' }
+  const { request, env } = context
+  const origin = request.headers.get('Origin')
+
+  if (origin && !ALLOWED_ORIGINS.has(origin)) {
+    return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 })
+  }
+
+  const cors = corsHeaders(origin)
+  const headers = { ...cors, 'Content-Type': 'application/json' }
+
+  // Rate limiting por IP
+  const ip = request.headers.get('CF-Connecting-IP') ?? 'unknown'
+  if (!(await isAllowed(ip, env.RATE_LIMIT_KV))) {
+    return new Response(
+      JSON.stringify({ reply: 'Has enviado demasiadas consultas. Por favor espera unos minutos.' }),
+      { status: 429, headers }
+    )
+  }
 
   try {
-    const { messages } = await context.request.json() as { messages: Message[] }
+    const body = await request.json() as { messages?: Message[] }
+    const raw: Message[] = Array.isArray(body.messages) ? body.messages : []
+
+    // Validación: máx 20 mensajes, máx 500 chars por mensaje
+    const messages = raw
+      .slice(-20)
+      .map(m => ({ role: m.role, content: String(m.content).slice(0, 500) }))
+      .filter(m => m.role === 'user' || m.role === 'assistant')
+
+    if (!messages.length || messages[messages.length - 1].role !== 'user') {
+      return new Response(JSON.stringify({ reply: 'Mensaje inválido.' }), { status: 400, headers })
+    }
 
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'x-api-key': context.env.ANTHROPIC_API_KEY,
+        'x-api-key': env.ANTHROPIC_API_KEY,
         'anthropic-version': '2023-06-01',
         'content-type': 'application/json',
       },
@@ -241,11 +313,11 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
     const data = await res.json() as AnthropicResponse
     const reply = data.content?.[0]?.text ?? 'Lo siento, hubo un error. Por favor intenta de nuevo.'
 
-    return new Response(JSON.stringify({ reply }), { headers: json })
+    return new Response(JSON.stringify({ reply }), { headers })
   } catch {
     return new Response(
       JSON.stringify({ reply: 'Lo siento, hubo un error. Por favor llama al +58 424 168 4657.' }),
-      { status: 500, headers: json }
+      { status: 500, headers }
     )
   }
 }
