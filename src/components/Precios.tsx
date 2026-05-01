@@ -1,23 +1,25 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Search, Info, Activity, ScanLine, Brain, FlaskConical, ClipboardList, RefreshCw } from 'lucide-react'
+import { Search, Info, Activity, ScanLine, Brain, FlaskConical, ClipboardList, RefreshCw, Stethoscope, ListChecks } from 'lucide-react'
 import {
-  ecosonogramas, radiografias, tomografias, laboratorio,
+  consultas, perfiles, ecosonogramas, radiografias, tomografias, laboratorio,
   bs, type Servicio,
 } from '../data/precios'
 import { useBCVRate } from '../hooks/useBCVRate'
 
 const categorias = [
-  { key: 'eco', label: 'Ecosonogramas', icon: Activity,     data: ecosonogramas },
-  { key: 'rx',  label: 'Radiografías',  icon: ScanLine,     data: radiografias },
-  { key: 'tc',  label: 'Tomografías',   icon: Brain,        data: tomografias },
-  { key: 'lab', label: 'Laboratorio',   icon: FlaskConical, data: laboratorio },
+  { key: 'cons', label: 'Consultas',     icon: Stethoscope,  data: consultas },
+  { key: 'perf', label: 'Perfiles Lab',  icon: ListChecks,   data: perfiles },
+  { key: 'eco',  label: 'Ecosonogramas', icon: Activity,     data: ecosonogramas },
+  { key: 'rx',   label: 'Radiografías',  icon: ScanLine,     data: radiografias },
+  { key: 'tc',   label: 'Tomografías',   icon: Brain,        data: tomografias },
+  { key: 'lab',  label: 'Laboratorio',   icon: FlaskConical, data: laboratorio },
 ]
 
 export default function Precios() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [cat, setCat] = useState('eco')
+  const [cat, setCat] = useState('cons')
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState<string | null>(null)
   const { tasa, fecha, loading, error, refresh } = useBCVRate()

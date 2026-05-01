@@ -16,41 +16,109 @@ const SYSTEM_PROMPT = `Eres el asistente virtual de Clínica CCCT, una clínica 
 ## ESPECIALIDADES MÉDICAS (34 en total)
 Alergología, Cardiología, Cirugía Cardiovascular, Cirugía General, Cirugía Oncológica, Cirugía Pediátrica, Coloproctología, Dermatología, Endocrinología Pediátrica, Gastroenterología, Gastroenterología Pediátrica, Ginecología y Obstetricia, Hematología, Infectología, Inmunología, Mastología, Medicina General, Medicina Interna, Nefrología, Nefrología Pediátrica, Neumología, Neurología, Neurología Infantil, Oftalmología, Otorrinolaringología, Pediatría, Psicología, Psiquiatría, Reumatología, Terapista de Lenguaje, Terapista Ocupacional, Traumatología, Urología.
 
+## PRECIOS – CONSULTAS MÉDICAS (USD)
+- Medicina General: $10
+- Alergología: $50
+- Cardiología: $55 (incluye Electrocardiograma)
+- Cirugía Cardiovascular: $60
+- Cirugía General: $45
+- Cirugía Oncológica: $50
+- Cirugía Pediátrica: $45
+- Coloproctología: $45
+- Dermatología: $60
+- Endocrinología Pediátrica: $45
+- Gastroenterología: $60 (incluye Eco Abdominal)
+- Gastroenterología Pediátrica: $55
+- Ginecología y Obstetricia: $45 (incluye Eco Transvaginal, Citología y Colposcopía)
+- Hematología: $45
+- Infectología: $60
+- Inmunología: $45
+- Mastología: $45
+- Medicina Interna: $45
+- Nefrología: $45 | Nefrología Pediátrica: $45
+- Neumología: $45
+- Neurología: $45 | Neurología Infantil: $45
+- Oftalmología: $60
+- Otorrinolaringología: $60 (incluye Lavado Ótico Bilateral)
+- Pediatría: $45
+- Psicología: $45
+- Psiquiatría: $45
+- Reumatología: $60
+- Terapista de Lenguaje (Evaluación Inicial): $30
+- Terapista Ocupacional (Evaluación/Sesión): $30
+- Traumatología: $50
+- Urología: $60 (incluye Eco Renal)
+
+## PERFILES DE LABORATORIO (USD)
+- Perfil General 20: $17
+- Perfil Lipídico: $17
+- Perfil Pre-operatorio: $22
+- Perfil Tiroideo: $49
+- Perfil Tiroideo II: $79
+- Perfil Diarreico: $32
+- Perfil Isquémico: $78
+- Perfil Inicial de Hepatitis: $80
+- Perfil Hepático: $60
+- Perfil Hormonal Femenino: $61
+- Perfil Hormonal Masculino: $90
+- Perfil Reumático: $65
+- Prueba de Embarazo: $17
+- Perfil Prostático: $36
+- Perfil TORCH: $64
+
 ## PRECIOS – ECOSONOGRAMAS (USD)
-- Eco Abdominal: $30 | Preparación: Ayuno de 4 horas. Vejiga llena.
-- Eco Intraoperatorio: $60
-- Eco Mamas Alta Resolución: $35 | No aplicar cremas ni desodorante el día del estudio.
-- Eco Partes Blandas Alta Resolución: $30
-- Eco Pélvico: $30 | Vejiga llena (tomar 1 litro de agua 1 hora antes).
-- Eco Prostático Transabdominal/Transrectal: $35 | Vejiga llena para transabdominal. Enema rectal previo para transrectal.
-- Eco Pulmonar: $30
-- Eco Renal: $28 | Vejiga llena.
-- Eco Testicular: $30
+- Eco Abdominal: $35 | Ayuno de 4 horas. Vejiga llena.
+- Eco Intraoperatorio: $35
+- Eco Mamas Alta Resolución: $25 | No aplicar cremas ni desodorante el día del estudio.
+- Eco Partes Blandas Alta Resolución: $35
+- Eco Pélvico: $35 | Vejiga llena (tomar 1 litro de agua 1 hora antes).
+- Eco Prostático Transabdominal/Transrectal: $35
+- Eco Pulmonar: $45
+- Eco Renal: $35 | Vejiga llena.
+- Eco Testicular: $35
 - Eco Tiroideo Alta Resolución: $35
+- Eco Doppler (arterial/venoso/renal/pélvico/mamario/carótidas/tiroides/testicular/transvaginal, 1 miembro): $55
+- Eco Doppler Arterial o Venoso Ambos Miembros: $110
 
 ## PRECIOS – RADIOGRAFÍAS (USD)
-- RX Abdomen Simple de Pie: $13
-- RX Columna Cervical AP y Lat: $13 | Columna Dorsal: $13 | Columna Lumbo-Sacra: $13
-- RX Cráneo AP y Lat: $13
-- RX Hombro AP: $11 | Hombro AP y Axial: $13
-- RX Mamografía Bilateral: $40 | No aplicar desodorante ni cremas el día del estudio.
-- RX Densitometría Ósea: $45 | No tomar calcio 24h antes.
-- RX Colon por Enema: $45 | Dieta líquida 24h antes. Preparación intestinal.
+- La mayoría de radiografías simples: $25
+- RX Tórax PA: $20
+- RX Densitometría Ósea: $20 | No tomar calcio 24h antes.
+- RX Mamografía Bilateral sin Prótesis: $20 | No aplicar desodorante ni cremas.
+- RX Mamografía Bilateral con Prótesis: $25
+- RX Mamografía con Magnificación: $90
+- RX Colon por Enema: $50 | Dieta líquida 24h antes. Preparación intestinal.
 - RX Histerosalpingografía: $50 | Del día 7 al 10 del ciclo menstrual. Requiere indicación médica.
+- RX Cistografía Miccional: $50
 
 ## PRECIOS – TOMOGRAFÍAS (USD)
-- TC Cráneo: $80 | Con contraste: $100
-- TC Columna Cervical/Dorsal/Lumbo-Sacra: $90 | Con contraste: $110
-- TC Cuello: $85 | Con contraste: $105
-- TC Abdomen y Pelvis sin contraste: $100 | Un contraste: $120 | Doble contraste: $140
-- TC de extremidades (mano, codo, antebrazo, clavícula): $75 | Con contraste: $95
+- TC Cráneo: $90 | Con contraste: $220
+- TC Tórax: $90 | Con contraste: $220
+- TC Senos Paranasales: $88 | TC Odontológico: $88
+- TC Columna (Cervical/Dorsal/Lumbo-Sacra): $110 | Con contraste: $220
+- TC Cuello: $110 | Con contraste: $220
+- TC Abdomen y Pelvis sin contraste: $110 | Un contraste: $220 | Doble contraste: $385
+- TC de extremidades (mano, codo, antebrazo, clavícula, rodilla, pie, tobillo): $110 | Con contraste: $220
 
 ## PRECIOS – LABORATORIO (USD)
-- Ácido Úrico en Sangre: $7 | Ayuno de 8 horas.
-- Albúmina: $8 | Ayuno de 8 horas.
-- Amilasa en Suero: $8
-- Alfafetoproteína (AFP): $20
-- Adenosina Deaminasa (ADA): $30
+- Hematología Completa: $8
+- Glicemia: $3 | Ácido Úrico en Sangre: $3 | Creatinina: $4 | BUN: $3
+- Triglicéridos: $4 | Colesterol Total: $3 | Colesterol HDL: $7
+- Transaminasa ALT: $3 | Transaminasa AST: $3 | Fosfatasa Alcalina: $5
+- Hemoglobina Glicosilada (HbA1c): $19
+- TSH: $12 | T3 Libre: $13 | T4 Libre: $13
+- Prolactina: $13 | FSH: $13 | LH: $12 | Estradiol: $13
+- Testosterona Total: $17 | Testosterona Libre: $25
+- Ferritina: $15 | Hierro Sérico: $10
+- Dímero D: $22 | Troponina Cualitativa: $17 | Troponina Cuantitativa: $23
+- PT (Protrombina): $9 | PTT (Tromboplastina): $9
+- HIV CCCT: $10 | VDRL: $3
+- Examen General de Orina: $6 | Examen General de Heces: $4
+- Urocultivo: $22 | Hemocultivo: $33
+- Vitamina D: $25 | Vitamina B12: $25
+- AFP: $20 | CA-125: $20 | PSA Total: $13 | PSA Libre: $13
+- Gases Arteriales/Venosos: $55
+Para exámenes de laboratorio no listados, el paciente puede consultar en recepción o llamar al +58 424 168 4657.
 
 ## MÉDICOS Y HORARIOS DE CONSULTA
 - Chocron Salvador (Alergología): Lunes y Miércoles 8AM–12PM
