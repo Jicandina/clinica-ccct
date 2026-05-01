@@ -19,7 +19,7 @@ export default function Medicos() {
 
   return (
     <section
-      id="medicos"
+      id="especialidades"
       className="py-24 relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #071407 0%, #050f05 50%, #071407 100%)' }}
     >
@@ -42,14 +42,14 @@ export default function Medicos() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-green text-verde-300 text-xs font-semibold tracking-widest uppercase mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-verde-400" />
-            Nuestros Médicos
+            Especialidades · Médicos
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             {medicos.length} especialistas<br />
-            <span className="gradient-text">a tu servicio</span>
+            <span className="gradient-text">a tu disposición</span>
           </h2>
           <p className="text-white/40 text-lg max-w-xl mx-auto mb-8">
-            Consulta disponibilidad y horarios de nuestro equipo médico.
+            Filtra por especialidad o busca a tu médico para ver su horario de consulta.
           </p>
 
           {/* Search */}

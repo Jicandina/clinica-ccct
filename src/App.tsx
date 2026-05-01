@@ -4,7 +4,6 @@ import Hero from './components/Hero'
 import Servicios from './components/Servicios'
 import PorQueNosotros from './components/PorQueNosotros'
 import Proceso from './components/Proceso'
-import Especialidades from './components/Especialidades'
 import Medicos from './components/Medicos'
 import Precios from './components/Precios'
 import FAQ from './components/FAQ'
@@ -29,7 +28,6 @@ export default function App() {
         <Servicios />
         <PorQueNosotros />
         <Proceso />
-        <Especialidades />
         <Medicos />
         <Precios />
         <FAQ />
