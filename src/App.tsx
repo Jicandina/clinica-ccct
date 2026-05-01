@@ -5,6 +5,7 @@ import Servicios from './components/Servicios'
 import PorQueNosotros from './components/PorQueNosotros'
 import Proceso from './components/Proceso'
 import Especialidades from './components/Especialidades'
+import Medicos from './components/Medicos'
 import Precios from './components/Precios'
 import FAQ from './components/FAQ'
 import Mapa from './components/Mapa'
@@ -29,6 +30,7 @@ export default function App() {
         <PorQueNosotros />
         <Proceso />
         <Especialidades />
+        <Medicos />
         <Precios />
         <FAQ />
         <Mapa />

@@ -52,6 +52,58 @@ Alergología, Cardiología, Cirugía Cardiovascular, Cirugía General, Cirugía 
 - Alfafetoproteína (AFP): $20
 - Adenosina Deaminasa (ADA): $30
 
+## MÉDICOS Y HORARIOS DE CONSULTA
+- Chocron Salvador (Alergología): Lunes y Miércoles 8AM–12PM
+- Medina Dilmara (Cardiología): Martes y Jueves 1PM–6PM
+- Rodriguez Maryan (Cardiología Infantil): Martes a Viernes 8AM–12PM
+- Ribero Esther (Cirugía Cardiovascular): Lunes desde 8AM
+- Rodriguez Alcides (Cirugía Cardiovascular): Miércoles 1PM–5PM
+- Cerquone Luis (Cirugía General): Lunes a Viernes 8AM–11AM
+- Gonzalez Luis (Cirugía General): Lunes a Viernes 8AM–11AM
+- Sully Maria (Cirugía Pediátrica): Jueves 1PM–5PM
+- Sardiñas Carlos (Coloproctología): Lun–Mié 9AM–10AM, Jue–Vie 9AM–2PM
+- Zambrano Yusmary (Cosmetología): Lunes a Viernes 8AM–12PM
+- Garcia Mario (Dermatología): Martes y Jueves 11AM–2PM
+- Olavarrieta Esther (Dermatología): Miércoles 11AM–5PM
+- Pérez Marvelys (Endocrinología Pediátrica): Martes 3PM–6PM
+- Ribeiro Rosa (Fisiatría): Martes a Viernes 8AM–12PM
+- Rodriguez Vanessa (Fisiatría): Lunes a Viernes 8AM–12PM
+- Mavares Rosaura (Foniatría): Miércoles 1PM–3PM
+- Giannopoulos Ioannis (Gastroenterología): Lun, Mié y Vie 8AM–12PM
+- Gomez Beatriz (Ginecología y Obstetricia): Lunes a Viernes 8AM–12PM
+- Pérez Carlos (Medicina Interna / Reumatología): Lunes y Viernes 3PM–5PM
+- Plaza Milger (Mastología): Martes 1PM–5PM
+- Garcia Carsy (Medicina Interna): Martes y Jueves 7AM–1PM
+- Mavares José (Medicina Interna): Lunes a Viernes 8AM–2PM
+- Villegas José (Medicina Interna): Lunes a Viernes 8AM–12PM
+- Gutiérrez Franklyn (Medicina Interna): Lunes y Miércoles 8AM–12PM
+- Díaz Belkis (Nefrología): Martes 9AM–12PM
+- González Félix (Nefrología Pediátrica): Mar, Jue y Vie 8AM–12PM
+- Salazar Lisbeth (Neumología): Jueves 8AM–12PM
+- Vargas Angélica (Neurología): Lunes 8AM–12PM
+- Loaiza Mary (Neurología Pediátrica): Miércoles 1PM–5PM
+- Duhamel Simi (Nutrición): Miércoles y Sábados 1PM–5PM
+- Garcias Beasneglys (Nutrición): Viernes 1PM–5PM
+- Hernández Maria (Nutrición): Jueves 8AM–5PM
+- Medina Joelys (Nutrición): Martes 8AM–5PM
+- Sánchez Miguel (Nutrición): Miércoles y Sábados 1PM–5PM
+- Giner Isabel (Odontología): Lunes a Viernes 8AM–5PM
+- Jacob Johanna (Oftalmología): Martes 8AM–12PM
+- Moreno Carlos (Oftalmología): Lunes y Miércoles 8AM–12PM
+- Sandoval Humberto (Oncología): Viernes 1PM–4PM
+- Hurtado Mario (Otorrinolaringología): Lun, Mar y Vie 8AM–1PM
+- Jungwirth Ilan (Otorrinolaringología): Mié, Jue y Vie 10AM–5PM
+- Flores Kenia (Pediatría): Lunes a Viernes 8AM–12PM
+- Garcia Isabel (Psicología): Lunes y Viernes 1PM–5PM
+- Prieto Purificación (Psicología): Jueves 8AM–5PM
+- Berroeta Maria (Psiquiatría): Lunes 9AM–12PM
+- Correa Luis (Traumatología): Miércoles 8AM–12PM
+- Loreto Alexis (Traumatología): Martes y Jueves 8AM–2PM
+- Rivas Edward (Traumatología): Lun, Mié y Vie 8AM–12PM
+- Briceño José (Urología): Martes y Jueves 2PM–5PM
+- Carrero Jorwin (Urología): Lunes y Miércoles 8AM–12PM
+- Medina José (Urología): Lun, Mié y Vie 2PM–5PM
+
 ## REGLAS
 1. Responde SIEMPRE en español, de forma amable y concisa (máximo 3 párrafos).
 2. Si no sabes algo, di honestamente que no tienes esa información y sugiere llamar al +58 424 168 4657.
