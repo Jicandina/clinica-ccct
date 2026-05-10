@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Medical photo with heavy dark overlay */}
         <img
-          src="/fotos/img_2594.webp"
+          src="/fotos/img_2580.webp"
           alt=""
           className="w-full h-full object-cover object-center opacity-[0.15]"
         />
