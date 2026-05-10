@@ -134,10 +134,12 @@ export default function Medicos() {
                         <span className="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium text-verde-400 bg-verde-400/10 border border-verde-400/20">
                           {m.especialidad}
                         </span>
-                        <div className="flex items-start gap-1.5 mt-2">
-                          <Clock className="w-3 h-3 text-white/30 flex-shrink-0 mt-0.5" />
-                          <p className="text-white/45 text-[11px] leading-relaxed">{m.horario}</p>
-                        </div>
+                        {m.horario && (
+                          <div className="flex items-start gap-1.5 mt-2">
+                            <Clock className="w-3 h-3 text-white/30 flex-shrink-0 mt-0.5" />
+                            <p className="text-white/45 text-[11px] leading-relaxed">{m.horario}</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.div>

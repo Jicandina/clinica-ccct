@@ -55,8 +55,8 @@ export const medicos: Medico[] = [
   { nombre: 'José Briceño', especialidad: 'Urología', horario: 'Martes y Jueves 2PM–5PM' },
   { nombre: 'Jorwin Carrero', especialidad: 'Urología', horario: 'Lunes y Miércoles 8AM–12PM' },
   { nombre: 'José Medina', especialidad: 'Urología', horario: 'Lun, Mié y Vie 2PM–5PM' },
-  { nombre: 'Rafael Giner Hidalgo', especialidad: 'Cirugía Plástica', horario: 'Por confirmar' },
-  { nombre: 'Por confirmar', especialidad: 'Anestesiología', horario: 'Por confirmar' },
+  { nombre: 'Rafael Giner Hidalgo', especialidad: 'Cirugía Plástica', horario: 'Martes y Jueves 9AM–1PM' },
+  { nombre: 'José Antonio Sáez', especialidad: 'Anestesiología', horario: '' },
 ]
 
 export const especialidadesMedicos = [...new Set(medicos.map(m => m.especialidad))].sort()
