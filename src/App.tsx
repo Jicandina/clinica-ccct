@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Servicios from './components/Servicios'
 import PorQueNosotros from './components/PorQueNosotros'
+import Galeria from './components/Galeria'
 import Proceso from './components/Proceso'
 import Medicos from './components/Medicos'
 import Precios from './components/Precios'
@@ -27,6 +28,7 @@ export default function App() {
         <Hero />
         <Servicios />
         <PorQueNosotros />
+        <Galeria />
         <Proceso />
         <Medicos />
         <Precios />
