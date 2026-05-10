@@ -46,9 +46,9 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Medical photo with heavy dark overlay */}
         <img
-          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1920&q=80"
+          src="/fotos/img_2647.webp"
           alt=""
-          className="w-full h-full object-cover opacity-[0.07]"
+          className="w-full h-full object-cover opacity-[0.18]"
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(26,92,26,0.28)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(46,139,46,0.12)_0%,transparent_50%)]" />
