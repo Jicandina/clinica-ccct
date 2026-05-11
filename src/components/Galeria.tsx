@@ -6,59 +6,37 @@ const categorias = ['Todos', 'Instalaciones', 'Equipos', 'Laboratorio']
 
 const fotos = [
   // Instalaciones
-  { src: '/fotos/img_2644.webp', label: 'Lobby clínico',            cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2645.webp', label: 'Acceso principal',         cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2646.webp', label: 'Zona de ingreso',          cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2647.webp', label: 'Entrada principal',        cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2648.webp', label: 'Recepción exterior',       cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2650.webp', label: 'Fachada exterior',         cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2651.webp', label: 'Vista exterior',           cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2653.webp', label: 'Área de consultas',        cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2654.webp', label: 'Sala de procedimientos',   cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2657.webp', label: 'Sala de consulta',         cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2658.webp', label: 'Consultorio médico',       cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2660.webp', label: 'Área clínica',             cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2662.webp', label: 'Sala de operaciones',      cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2663.webp', label: 'Quirófano',                cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2672.webp', label: 'Área de emergencias',      cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2675.webp', label: 'Área de recuperación',     cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2676.webp', label: 'Zona de emergencias',      cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2678.webp', label: 'Pasillo de emergencias',   cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2679.webp', label: 'Área de triaje',           cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2680.webp', label: 'Sala de urgencias',        cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2684.webp', label: 'Módulo de atención',       cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2686.webp', label: 'Recepción',                cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2570.webp', label: 'Área de hospitalización',  cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2571.webp', label: 'Pasillo clínico',          cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2572.webp', label: 'Corredor clínico',         cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2575.webp', label: 'Sala de espera',           cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2576.webp', label: 'Área de descanso',         cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2580.webp', label: 'Habitación',               cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2581.webp', label: 'Habitación individual',    cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2582.webp', label: 'Cuarto de hospitalización',cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2584.webp', label: 'Pasillo de acceso',        cat: 'Instalaciones', landscape: true  },
-  { src: '/fotos/img_2585.webp', label: 'Área interna',             cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2701.webp', label: 'Área administrativa',      cat: 'Instalaciones', landscape: false },
-  { src: '/fotos/img_2702.webp', label: 'Instalaciones generales',  cat: 'Instalaciones', landscape: false },
+  { src: '/fotos/img_2570.webp', label: 'Área de hospitalización', cat: 'Instalaciones' },
+  { src: '/fotos/img_2572.webp', label: 'Pasillo clínico',         cat: 'Instalaciones' },
+  { src: '/fotos/img_2575.webp', label: 'Sala de espera',          cat: 'Instalaciones' },
+  { src: '/fotos/img_2580.webp', label: 'Habitación',              cat: 'Instalaciones' },
+  { src: '/fotos/img_2582.webp', label: 'Habitación individual',   cat: 'Instalaciones' },
+  { src: '/fotos/img_2584.webp', label: 'Pasillo de acceso',       cat: 'Instalaciones' },
+  { src: '/fotos/img_2645.webp', label: 'Acceso principal',        cat: 'Instalaciones' },
+  { src: '/fotos/img_2647.webp', label: 'Entrada principal',       cat: 'Instalaciones' },
+  { src: '/fotos/img_2650.webp', label: 'Fachada exterior',        cat: 'Instalaciones' },
+  { src: '/fotos/img_2653.webp', label: 'Área de consultas',       cat: 'Instalaciones' },
+  { src: '/fotos/img_2657.webp', label: 'Sala de consulta',        cat: 'Instalaciones' },
+  { src: '/fotos/img_2660.webp', label: 'Área clínica',            cat: 'Instalaciones' },
+  { src: '/fotos/img_2663.webp', label: 'Quirófano',               cat: 'Instalaciones' },
+  { src: '/fotos/img_2672.webp', label: 'Área de emergencias',     cat: 'Instalaciones' },
+  { src: '/fotos/img_2675.webp', label: 'Área de recuperación',    cat: 'Instalaciones' },
+  { src: '/fotos/img_2679.webp', label: 'Área de triaje',          cat: 'Instalaciones' },
+  { src: '/fotos/img_2684.webp', label: 'Módulo de atención',      cat: 'Instalaciones' },
+  { src: '/fotos/img_2686.webp', label: 'Recepción',               cat: 'Instalaciones' },
+  { src: '/fotos/img_2701.webp', label: 'Área administrativa',     cat: 'Instalaciones' },
   // Equipos
-  { src: '/fotos/img_2594.webp', label: 'Sala de radiología',       cat: 'Equipos',       landscape: true  },
-  { src: '/fotos/img_2595.webp', label: 'Sala de imagen',           cat: 'Equipos',       landscape: false },
-  { src: '/fotos/img_2600.webp', label: 'Mamógrafo GE',             cat: 'Equipos',       landscape: false },
-  { src: '/fotos/img_2602.webp', label: 'Equipo de diagnóstico',    cat: 'Equipos',       landscape: true  },
-  { src: '/fotos/img_2603.webp', label: 'Tecnología médica',        cat: 'Equipos',       landscape: false },
-  { src: '/fotos/img_2611.webp', label: 'Ecosonógrafo',             cat: 'Equipos',       landscape: false },
-  { src: '/fotos/img_2612.webp', label: 'Ecógrafo avanzado',        cat: 'Equipos',       landscape: true  },
-  { src: '/fotos/img_2613.webp', label: 'Equipo de ultrasonido',    cat: 'Equipos',       landscape: true  },
+  { src: '/fotos/img_2594.webp', label: 'Sala de radiología',      cat: 'Equipos' },
+  { src: '/fotos/img_2600.webp', label: 'Mamógrafo GE',            cat: 'Equipos' },
+  { src: '/fotos/img_2602.webp', label: 'Equipo de diagnóstico',   cat: 'Equipos' },
+  { src: '/fotos/img_2611.webp', label: 'Ecosonógrafo',            cat: 'Equipos' },
+  { src: '/fotos/img_2613.webp', label: 'Equipo de ultrasonido',   cat: 'Equipos' },
   // Laboratorio
-  { src: '/fotos/img_2620.webp', label: 'Toma de muestras',         cat: 'Laboratorio',   landscape: false },
-  { src: '/fotos/img_2621.webp', label: 'Área de análisis',         cat: 'Laboratorio',   landscape: true  },
-  { src: '/fotos/img_2622.webp', label: 'Equipos de laboratorio',   cat: 'Laboratorio',   landscape: false },
-  { src: '/fotos/img_2623.webp', label: 'Procesamiento de muestras',cat: 'Laboratorio',   landscape: true  },
-  { src: '/fotos/img_2624.webp', label: 'Estación de trabajo',      cat: 'Laboratorio',   landscape: false },
-  { src: '/fotos/img_2625.webp', label: 'Laboratorio general',      cat: 'Laboratorio',   landscape: true  },
-  { src: '/fotos/img_2626.webp', label: 'Laboratorio clínico',      cat: 'Laboratorio',   landscape: true  },
-  { src: '/fotos/img_2627.webp', label: 'Análisis clínicos',        cat: 'Laboratorio',   landscape: true  },
-  { src: '/fotos/img_2628.webp', label: 'Área de muestras',         cat: 'Laboratorio',   landscape: false },
+  { src: '/fotos/img_2620.webp', label: 'Toma de muestras',        cat: 'Laboratorio' },
+  { src: '/fotos/img_2622.webp', label: 'Equipos de laboratorio',  cat: 'Laboratorio' },
+  { src: '/fotos/img_2624.webp', label: 'Estación de trabajo',     cat: 'Laboratorio' },
+  { src: '/fotos/img_2626.webp', label: 'Laboratorio clínico',     cat: 'Laboratorio' },
+  { src: '/fotos/img_2628.webp', label: 'Área de muestras',        cat: 'Laboratorio' },
 ]
 
 export default function Galeria() {
@@ -125,25 +103,25 @@ export default function Galeria() {
         </motion.div>
 
         {/* Grid */}
-        <div key={catActiva} className="columns-2 md:columns-3 lg:columns-4 gap-3">
+        <div key={catActiva} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {filtradas.map((foto, i) => (
             <motion.div
               key={foto.src}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.25, delay: i * 0.05 }}
-              className="break-inside-avoid mb-3 cursor-pointer group relative overflow-hidden rounded-2xl"
+              transition={{ duration: 0.25, delay: i * 0.04 }}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl"
+              style={{ aspectRatio: '3/4' }}
               onClick={() => setLightbox(i)}
             >
               <img
                 src={foto.src}
                 alt={foto.label}
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                style={{ borderRadius: '16px' }}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-white text-sm font-semibold">{foto.label}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                <span className="text-white text-xs font-semibold">{foto.label}</span>
               </div>
             </motion.div>
           ))}
@@ -162,7 +140,6 @@ export default function Galeria() {
             style={{ background: 'rgba(0,0,0,0.92)' }}
             onClick={() => setLightbox(null)}
           >
-            {/* Close */}
             <button
               onClick={() => setLightbox(null)}
               className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all z-10"
@@ -170,7 +147,6 @@ export default function Galeria() {
               <X size={20} />
             </button>
 
-            {/* Prev */}
             <button
               onClick={e => { e.stopPropagation(); prev() }}
               className="absolute left-4 w-10 h-10 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all z-10"
@@ -178,7 +154,6 @@ export default function Galeria() {
               <ChevronLeft size={24} />
             </button>
 
-            {/* Image */}
             <motion.div
               key={lightbox}
               initial={{ opacity: 0, scale: 0.96 }}
@@ -196,7 +171,6 @@ export default function Galeria() {
               <p className="text-white/60 text-sm text-center mt-4">{filtradas[lightbox].label}</p>
             </motion.div>
 
-            {/* Next */}
             <button
               onClick={e => { e.stopPropagation(); next() }}
               className="absolute right-4 w-10 h-10 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all z-10"
@@ -204,7 +178,6 @@ export default function Galeria() {
               <ChevronRight size={24} />
             </button>
 
-            {/* Counter */}
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/30 text-xs">
               {lightbox + 1} / {filtradas.length}
             </div>
