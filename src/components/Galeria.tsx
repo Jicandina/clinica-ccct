@@ -84,36 +84,29 @@ export default function Galeria() {
         </motion.div>
 
         {/* Grid */}
-        <motion.div
-          layout
-          className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3"
-        >
-          <AnimatePresence mode="popLayout">
-            {filtradas.map((foto, i) => (
-              <motion.div
-                key={foto.src}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25, delay: i * 0.04 }}
-                className="break-inside-avoid mb-3 cursor-pointer group relative overflow-hidden rounded-2xl"
-                onClick={() => setLightbox(i)}
-              >
-                <img
-                  src={foto.src}
-                  alt={foto.label}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={{ borderRadius: '16px' }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold">{foto.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div key={catActiva} className="columns-2 md:columns-3 lg:columns-4 gap-3">
+          {filtradas.map((foto, i) => (
+            <motion.div
+              key={foto.src}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.25, delay: i * 0.05 }}
+              className="break-inside-avoid mb-3 cursor-pointer group relative overflow-hidden rounded-2xl"
+              onClick={() => setLightbox(i)}
+            >
+              <img
+                src={foto.src}
+                alt={foto.label}
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ borderRadius: '16px' }}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white text-sm font-semibold">{foto.label}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Lightbox */}
