@@ -5,7 +5,7 @@ import { Scan, FlaskConical, Stethoscope, Microscope, MessageCircle, Activity } 
 const servicios = [
   {
     icon: Activity,
-    titulo: 'Ecosonogramas',
+    titulo: 'Ecografías',
     desc: 'Diagnóstico por ultrasonido de alta resolución. Abdominal, pélvico, tiroideo, mamas, renal y más.',
     color: 'from-verde-600/20 to-verde-500/5',
     border: 'border-verde-600/30',
