@@ -23,6 +23,7 @@ export default function Footer() {
               {[
                 { label: 'Servicios', href: '#servicios' },
                 { label: 'Especialidades', href: '#especialidades' },
+                { label: 'Galería', href: '#galeria' },
                 { label: 'Tarifario', href: '#precios' },
                 { label: 'Preguntas frecuentes', href: '#faq' },
                 { label: 'Contacto', href: '#contacto' },
@@ -52,7 +53,7 @@ export default function Footer() {
               >
                 +58 424 168 4657
               </a>
-              <p>Lun–Sáb · 7:00 am – 5:00 pm</p>
+              <p>Lun–Sáb · 7:00 am – 7:00 pm</p>
             </div>
           </div>
         </div>

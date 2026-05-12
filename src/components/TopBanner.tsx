@@ -7,7 +7,7 @@ export default function TopBanner() {
         <div className="flex items-center gap-6">
           <span className="flex items-center gap-1.5 text-white/80">
             <Clock className="w-3 h-3" />
-            Lun–Sáb · 7:00 am – 5:00 pm
+            Lun–Sáb · 7:00 am – 7:00 pm
           </span>
           <span className="flex items-center gap-1.5 text-white/80">
             <MapPin className="w-3 h-3" />

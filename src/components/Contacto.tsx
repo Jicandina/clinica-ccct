@@ -76,7 +76,7 @@ export default function Contacto() {
               {
                 icon: Clock,
                 titulo: 'Horario de atención',
-                texto: 'Lunes a Sábado · 7:00 am – 5:00 pm',
+                texto: 'Lunes a Sábado · 7:00 am – 7:00 pm',
               },
               {
                 icon: CreditCard,

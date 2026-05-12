@@ -2,6 +2,14 @@ import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Shield, Star, HeartPulse, ScanSearch, Microscope, Stethoscope } from 'lucide-react'
 
+const bgPhotos = [
+  '/fotos/img_2647.webp',
+  '/fotos/img_2686.webp',
+  '/fotos/img_2575.webp',
+  '/fotos/img_2663.webp',
+  '/fotos/img_2672.webp',
+]
+
 const OrbScene = lazy(() =>
   window.innerWidth >= 768
     ? import('./3d/OrbScene')
@@ -40,16 +48,29 @@ function AnimatedStat({ icon: Icon, value, suffix, label }: { icon: any; value: 
 }
 
 export default function Hero() {
+  const [bgIndex, setBgIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIndex(i => (i + 1) % bgPhotos.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#050f05]">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Medical photo with heavy dark overlay */}
-        <img
-          src="/fotos/img_2580.webp"
-          alt=""
-          className="w-full h-full object-cover object-center opacity-[0.15]"
-        />
+        {/* Background slideshow — rotates every 5 seconds */}
+        {bgPhotos.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+            style={{ opacity: i === bgIndex ? 0.15 : 0 }}
+          />
+        ))}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(26,92,26,0.28)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(46,139,46,0.12)_0%,transparent_50%)]" />
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-verde-600/40 to-transparent" />
