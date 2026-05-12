@@ -6,24 +6,22 @@ const categorias = ['Todos', 'Instalaciones', 'Equipos', 'Laboratorio']
 
 const fotos = [
   // Instalaciones
-  { src: '/fotos/img_2647.webp', label: 'Administración',           cat: 'Instalaciones' },
+  { src: '/fotos/img_2647.webp', label: 'Entrada principal',        cat: 'Instalaciones' },
   { src: '/fotos/img_2650.webp', label: 'Fachada exterior',         cat: 'Instalaciones' },
   { src: '/fotos/img_2686.webp', label: 'Recepción de emergencia',  cat: 'Instalaciones' },
   { src: '/fotos/img_2572.webp', label: 'Habitación',               cat: 'Instalaciones' },
   { src: '/fotos/img_2575.webp', label: 'Área de hospitalización',  cat: 'Instalaciones' },
-  { src: '/fotos/img_2580.webp', label: 'Baño de habitación',       cat: 'Instalaciones' },
-  { src: '/fotos/img_2653.webp', label: 'Sala de preanestesia',     cat: 'Instalaciones' },
+  { src: '/fotos/img_2580.webp', label: 'Habitación',               cat: 'Instalaciones' },
+  { src: '/fotos/img_2653.webp', label: 'Emergencias',              cat: 'Instalaciones' },
   { src: '/fotos/img_2657.webp', label: 'Sala de cura',             cat: 'Instalaciones' },
   { src: '/fotos/img_2663.webp', label: 'Área de triaje',           cat: 'Instalaciones' },
   { src: '/fotos/img_2672.webp', label: 'Pasillo de emergencias',   cat: 'Instalaciones' },
   // Equipos
   { src: '/fotos/img_2594.webp', label: 'Entrega de resultados',    cat: 'Equipos' },
-  { src: '/fotos/img_2600.webp', label: 'Mamógrafo GE',             cat: 'Equipos' },
   { src: '/fotos/img_2602.webp', label: 'Equipo de imagen',         cat: 'Equipos' },
   { src: '/fotos/img_2611.webp', label: 'Ecógrafo',                 cat: 'Equipos' },
   // Laboratorio
   { src: '/fotos/img_2620.webp', label: 'Toma de muestras',        cat: 'Laboratorio' },
-  { src: '/fotos/img_2624.webp', label: 'Estación de trabajo',      cat: 'Laboratorio' },
   { src: '/fotos/img_2626.webp', label: 'Laboratorio clínico',      cat: 'Laboratorio' },
 ]
 
