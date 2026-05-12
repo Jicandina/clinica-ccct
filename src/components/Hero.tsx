@@ -69,23 +69,13 @@ export default function Hero() {
           {/* Left text */}
           <div className="flex-1 text-center lg:text-left max-w-xl lg:max-w-none">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-green mb-4"
-            >
-              <span className="w-2 h-2 rounded-full bg-verde-400 animate-pulse" />
-              <span className="text-verde-300 text-xs font-semibold tracking-widest uppercase">Clínica CCCT · Chuao, Caracas</span>
-            </motion.div>
-
-            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.28 }}
-              className="flex items-center gap-3 mb-6 justify-center lg:justify-start"
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-center justify-center lg:justify-start mb-8"
             >
-              <div className="bg-white rounded-lg px-2 py-0.5 flex items-center">
-                <img src="/logo.png" alt="Clínica CCCT" className="h-7 w-auto" />
+              <div className="bg-white rounded-xl px-4 py-2 flex items-center shadow-lg shadow-black/30">
+                <img src="/logo.png" alt="Clínica CCCT" className="h-14 w-auto" />
               </div>
             </motion.div>
 
