@@ -34,11 +34,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18 py-4">
-          <a href="#inicio" className="flex items-center gap-2 group">
-            <div className="bg-white rounded-lg px-1.5 py-0.5 flex items-center group-hover:opacity-90 transition-opacity">
-              <img src="/logo.png" alt="Clínica CCCT" className="h-8 w-auto" />
-            </div>
-          </a>
+          <a href="#inicio" className="flex items-center gap-2 group" />
 
           <div className="hidden lg:flex items-center gap-8">
             {links.map((l, i) => (
