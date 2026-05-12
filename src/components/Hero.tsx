@@ -5,8 +5,6 @@ import { Shield, Star, HeartPulse, ScanSearch, Microscope, Stethoscope } from 'l
 const bgPhotos = [
   '/fotos/img_2647.webp',
   '/fotos/img_2686.webp',
-  '/fotos/img_2575.webp',
-  '/fotos/img_2663.webp',
   '/fotos/img_2672.webp',
 ]
 
@@ -53,7 +51,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex(i => (i + 1) % bgPhotos.length)
-    }, 5000)
+    }, 10000)
     return () => clearInterval(timer)
   }, [])
 
