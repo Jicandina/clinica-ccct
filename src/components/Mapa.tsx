@@ -56,7 +56,7 @@ export default function Mapa() {
                 <div className="w-9 h-9 rounded-xl bg-verde-500/15 flex items-center justify-center flex-shrink-0">
                   <Clock className="w-4 h-4 text-verde-400" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-white/30 text-[10px] font-semibold uppercase tracking-widest mb-3">Horario</p>
                   <div className="space-y-2.5">
                     <div className="flex justify-between text-sm py-1 border-b border-white/5">
