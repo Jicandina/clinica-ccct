@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Fondo blanco -->
   <circle cx="24" cy="24" r="24" fill="white"/>
-  <!-- 4 arcos concéntricos tipo C, apertura a la derecha (~90° de gap) -->
-  <path d="M 37.43,37.43 A 19,19 0 1,0 37.43,10.57" stroke="#0d4a0d" stroke-width="6"   stroke-linecap="round"/>
-  <path d="M 33.90,33.90 A 14,14 0 1,0 33.90,14.10" stroke="#1a7a1a" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M 30.36,30.36 A  9, 9 0 1,0 30.36,17.64" stroke="#2e9e2e" stroke-width="3"   stroke-linecap="round"/>
-  <path d="M 27.46,27.46 A  4.9,4.9 0 1,0 27.46,20.54" stroke="#4cbf4c" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="2" fill="#8fd14f"/>
+  <!-- Bandas concéntricas de verde alternando con blanco -->
+  <circle cx="24" cy="24" r="23"   fill="#1a5c1a"/>
+  <circle cx="24" cy="24" r="17"   fill="white"/>
+  <circle cx="24" cy="24" r="15"   fill="#2e8b2e"/>
+  <circle cx="24" cy="24" r="11"   fill="white"/>
+  <circle cx="24" cy="24" r="9"    fill="#5cb85c"/>
+  <circle cx="24" cy="24" r="7"    fill="white"/>
+  <circle cx="24" cy="24" r="5.5"  fill="#c4e026"/>
+  <!-- Cuña blanca que recorta el lado derecho creando la apertura de la "C" (~90°) -->
+  <path d="M 24,24 L 40.97,40.97 A 24,24 0 0,0 40.97,7.03 Z" fill="white"/>
 </svg>
