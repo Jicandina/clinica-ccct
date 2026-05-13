@@ -18,7 +18,7 @@ const fotos = [
   { src: '/fotos/img_2672.webp', label: 'Pasillo de emergencias',   cat: 'Instalaciones' },
   // Equipos
   { src: '/fotos/img_2594.webp', label: 'Entrega de resultados',    cat: 'Equipos' },
-  { src: '/fotos/img_2602.webp', label: 'Equipo de imagen',         cat: 'Equipos' },
+  { src: '/fotos/img_2602.webp', label: 'Mamógrafo',                cat: 'Equipos' },
   { src: '/fotos/img_2611.webp', label: 'Ecógrafo',                 cat: 'Equipos' },
   // Laboratorio
   { src: '/fotos/img_2620.webp', label: 'Toma de muestras',        cat: 'Laboratorio' },
