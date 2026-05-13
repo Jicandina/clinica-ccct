@@ -61,11 +61,11 @@ export default function Mapa() {
                   <div className="space-y-1">
                     <div className="flex justify-between text-sm">
                       <span className="text-white/60">Lunes – Viernes</span>
-                      <span className="text-verde-400 font-semibold">7:00 – 17:00</span>
+                      <span className="text-verde-400 font-semibold">7:00 – 19:00</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-white/60">Sábado</span>
-                      <span className="text-verde-400 font-semibold">7:00 – 17:00</span>
+                      <span className="text-verde-400 font-semibold">7:00 – 19:00</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-white/60">Domingo</span>
