@@ -25,7 +25,7 @@ const SYSTEM_PROMPT = `Eres el asistente virtual de Clínica CCCT, una clínica 
 - **Nombre:** Clínica CCCT
 - **Ubicación:** Centro Comercial Ciudad Tamanaco (CCCT), Nivel C1, Chuao, Caracas, Venezuela
 - **Teléfono / WhatsApp:** +58 424 168 4657
-- **Horario:** Lunes a Sábado 7:00 AM – 5:00 PM | Domingos: Cerrado
+- **Horario:** Lunes a Sábado 7:00 AM – 7:00 PM | Domingos: Cerrado
 - **Servicios:** Ecosonografía, Radiología, Tomografía Computarizada, Laboratorio Clínico y Consultas de Especialidad
 
 ## ESPECIALIDADES MÉDICAS (34 en total)
