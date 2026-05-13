@@ -37,10 +37,10 @@ function AnimatedStat({ icon: Icon, value, suffix, label }: { icon: any; value: 
   return (
     <div ref={ref} className="text-center lg:text-left">
       <Icon className="w-4 h-4 text-verde-400 mb-2 mx-auto lg:mx-0" />
-      <p className="text-2xl font-bold text-white tabular-nums">
+      <p className="text-lg font-bold text-white tabular-nums">
         {count}{suffix}
       </p>
-      <p className="text-[11px] text-white/40 leading-tight mt-0.5">{label}</p>
+      <p className="text-[10px] text-white/40 leading-tight mt-0.5">{label}</p>
     </div>
   )
 }
@@ -164,8 +164,8 @@ export default function Hero() {
                 { icon: Microscope, text: 'Laboratorio clínico — resultados mismo día' },
                 { icon: Stethoscope, text: '34 especialidades médicas · Atención integral' },
               ].map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-2 text-white/40 text-[11px]">
-                  <Icon className="w-3 h-3 text-verde-500 flex-shrink-0" />
+                <li key={text} className="flex items-center gap-2 text-white/40 text-sm">
+                  <Icon className="w-3.5 h-3.5 text-verde-500 flex-shrink-0" />
                   {text}
                 </li>
               ))}
