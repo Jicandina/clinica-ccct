@@ -20,6 +20,9 @@ const fotos = [
   { src: '/fotos/img_2594.webp', label: 'Entrega de resultados',    cat: 'Equipos' },
   { src: '/fotos/img_2602.webp', label: 'Mamógrafo',                cat: 'Equipos' },
   { src: '/fotos/img_2611.webp', label: 'Ecógrafo',                 cat: 'Equipos' },
+  { src: '/fotos/img_2616.jpeg', label: 'Sala de rayos X',          cat: 'Equipos' },
+  { src: '/fotos/img_2617.jpeg', label: 'Equipo de rayos X',        cat: 'Equipos' },
+  { src: '/fotos/img_2618.jpeg', label: 'Radiología',               cat: 'Equipos' },
   // Laboratorio
   { src: '/fotos/img_2620.webp', label: 'Toma de muestras',        cat: 'Laboratorio' },
   { src: '/fotos/img_2626.webp', label: 'Laboratorio clínico',      cat: 'Laboratorio' },
