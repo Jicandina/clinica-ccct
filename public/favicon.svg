@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <!-- Fondo verde oscuro -->
-  <circle cx="24" cy="24" r="24" fill="#1a5c1a"/>
-  <!-- Anillo blanco interior (crea el efecto de aro) -->
-  <circle cx="24" cy="24" r="15" fill="#2e8b2e"/>
-  <!-- Centro más claro -->
-  <circle cx="24" cy="24" r="8"  fill="#4cbf4c"/>
-  <!-- Cuña blanca ancha: gap de ~100° a la derecha para que la C sea obvia a 16px -->
-  <path d="M 24,24 L 39.43,42.38 A 24,24 0 0,0 39.43,5.62 Z" fill="white"/>
-  <!-- Reborde exterior blanco fino para separar del fondo del tab -->
-  <circle cx="24" cy="24" r="23" fill="none" stroke="white" stroke-width="1"/>
+  <!-- Fondo blanco -->
+  <circle cx="24" cy="24" r="24" fill="white"/>
+  <!-- Bandas concéntricas de verde alternando con blanco -->
+  <circle cx="24" cy="24" r="23"   fill="#1a5c1a"/>
+  <circle cx="24" cy="24" r="17"   fill="white"/>
+  <circle cx="24" cy="24" r="15"   fill="#2e8b2e"/>
+  <circle cx="24" cy="24" r="11"   fill="white"/>
+  <circle cx="24" cy="24" r="9"    fill="#5cb85c"/>
+  <circle cx="24" cy="24" r="7"    fill="white"/>
+  <circle cx="24" cy="24" r="5.5"  fill="#c4e026"/>
+  <!-- Cuña blanca que recorta el lado derecho creando la apertura de la "C" (~90°) -->
+  <path d="M 24,24 L 40.97,40.97 A 24,24 0 0,0 40.97,7.03 Z" fill="white"/>
 </svg>
