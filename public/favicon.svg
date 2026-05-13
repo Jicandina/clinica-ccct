@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <circle cx="24" cy="24" r="23" fill="#0d3d0d"/>
-  <path d="M36.73 11.27 A18 18 0 1 0 36.73 36.73"
-        stroke="#1a5c1a" stroke-width="5" stroke-linecap="round"/>
-  <path d="M33.19 14.81 A13 13 0 1 0 33.19 33.19"
-        stroke="#2e8b2e" stroke-width="4" stroke-linecap="round"/>
-  <path d="M29.66 18.34 A8 8 0 1 0 29.66 29.66"
-        stroke="#4cbf4c" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M26.83 21.17 A4 4 0 1 0 26.83 26.83"
-        stroke="#8fd14f" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="2" fill="#8fd14f"/>
+  <circle cx="24" cy="24" r="24" fill="white"/>
+  <!-- Outer C arc -->
+  <path d="M 39.32,36.86 A 20,20 0 1,0 39.32,11.14" stroke="#0d4a0d" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Middle C arc -->
+  <path d="M 34.72,33.00 A 14,14 0 1,0 34.72,15.00" stroke="#1a7a1a" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Inner C arc -->
+  <path d="M 30.13,29.14 A 8,8 0 1,0 30.13,18.86" stroke="#2e9e2e" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="24" cy="24" r="2.5" fill="#4cbf4c"/>
 </svg>
