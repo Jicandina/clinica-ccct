@@ -37,7 +37,7 @@ function AnimatedStat({ icon: Icon, value, suffix, label }: { icon: any; value: 
   return (
     <div ref={ref} className="text-center lg:text-left">
       <Icon className="w-4 h-4 text-verde-400 mb-2 mx-auto lg:mx-0" />
-      <p className="text-lg font-bold text-white tabular-nums">
+      <p className="text-xl font-bold text-white tabular-nums">
         {count}{suffix}
       </p>
       <p className="text-[10px] text-white/40 leading-tight mt-0.5">{label}</p>
