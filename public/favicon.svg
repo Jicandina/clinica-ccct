@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <!-- Fondo blanco -->
   <circle cx="24" cy="24" r="24" fill="white"/>
-  <!-- Bandas concéntricas de verde alternando con blanco -->
-  <circle cx="24" cy="24" r="23"   fill="#1a5c1a"/>
-  <circle cx="24" cy="24" r="17"   fill="white"/>
-  <circle cx="24" cy="24" r="15"   fill="#2e8b2e"/>
-  <circle cx="24" cy="24" r="11"   fill="white"/>
-  <circle cx="24" cy="24" r="9"    fill="#5cb85c"/>
-  <circle cx="24" cy="24" r="7"    fill="white"/>
-  <circle cx="24" cy="24" r="5.5"  fill="#c4e026"/>
-  <!-- Cuña blanca que recorta el lado derecho creando la apertura de la "C" (~90°) -->
-  <path d="M 24,24 L 40.97,40.97 A 24,24 0 0,0 40.97,7.03 Z" fill="white"/>
+  <!-- Banda exterior: verde oscuro -->
+  <circle cx="24" cy="24" r="23"  fill="#1a5c1a"/>
+  <!-- Separador blanco -->
+  <circle cx="24" cy="24" r="16"  fill="white"/>
+  <!-- Banda media: verde medio -->
+  <circle cx="24" cy="24" r="14"  fill="#2e8b2e"/>
+  <!-- Separador blanco -->
+  <circle cx="24" cy="24" r="9.5" fill="white"/>
+  <!-- Centro: amarillo-verde -->
+  <circle cx="24" cy="24" r="7.5" fill="#c4e026"/>
+  <!-- Cuña blanca: crea la apertura de la C (~80° gap a la derecha) -->
+  <path d="M 24,24 L 42.38,39.43 A 24,24 0 0,0 42.38,8.57 Z" fill="white"/>
 </svg>
