@@ -6,6 +6,7 @@ const bgPhotos = [
   '/fotos/img_2647.webp',
   '/fotos/img_2686.webp',
   '/fotos/img_2672.webp',
+  '/fotos/img_2580.webp',
 ]
 
 const OrbScene = lazy(() =>
@@ -51,7 +52,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex(i => (i + 1) % bgPhotos.length)
-    }, 10000)
+    }, 7000)
     return () => clearInterval(timer)
   }, [])
 
@@ -111,11 +112,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.45 }}
-              className="text-white/70 text-xl md:text-2xl font-semibold leading-snug mb-6"
+              className="text-white/70 text-xl md:text-2xl font-semibold mb-6"
             >
-              Tu salud está<br />
-              en las mejores<br />
-              manos
+              Tu salud está en las mejores manos
             </motion.p>
 
             <motion.p
