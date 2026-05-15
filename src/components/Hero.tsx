@@ -102,12 +102,21 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6 text-shadow"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-3 text-shadow"
+            >
+              <span className="gradient-text">CLÍNICA CCCT</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="text-white/70 text-xl md:text-2xl font-semibold leading-snug mb-6"
             >
               Tu salud está<br />
               en las mejores<br />
-              <span className="gradient-text">manos</span>
-            </motion.h1>
+              manos
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
