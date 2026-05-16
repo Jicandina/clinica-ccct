@@ -114,6 +114,26 @@ export default function Precios() {
           })}
         </motion.div>
 
+        {/* Banner contextual para Laboratorio y Perfiles */}
+        {(cat === 'lab' || cat === 'perf') && (
+          <motion.div
+            key={cat + '-banner'}
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+            className="flex flex-wrap items-center justify-center gap-2 mb-4"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-[11px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              Sin cita previa · Atención directa Lun–Sáb
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-verde-500/10 border border-verde-500/20 text-verde-400 text-[11px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-verde-400" />
+              Los marcados con <span className="font-bold ml-1">Sin ayuno</span>&nbsp;puedes hacerlos de inmediato
+            </span>
+          </motion.div>
+        )}
+
         {/* Search */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -192,10 +212,15 @@ function FilaServicio({ servicio, tasa, zebra, expanded, onToggle }: {
         onClick={hasReq ? onToggle : undefined}
         className={`grid grid-cols-12 px-5 py-3.5 items-center group ${hasReq ? 'cursor-pointer hover:bg-verde-500/5' : ''} transition-colors`}
       >
-        <div className="col-span-7 flex items-center gap-2">
+        <div className="col-span-7 flex items-center gap-1.5 flex-wrap">
           <span className="text-white/70 text-sm group-hover:text-white transition-colors leading-snug">{servicio.nombre}</span>
           {hasReq && (
             <Info className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${expanded ? 'text-verde-400' : 'text-white/20 group-hover:text-verde-400/60'}`} />
+          )}
+          {servicio.sinAyuno && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-verde-500/15 text-verde-400 border border-verde-500/25 whitespace-nowrap flex-shrink-0">
+              Sin ayuno
+            </span>
           )}
         </div>
         <div className="col-span-2 text-right">

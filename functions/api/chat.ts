@@ -115,6 +115,8 @@ Alergología, Cardiología, Cirugía Cardiovascular, Cirugía General, Cirugía 
 - TC Abdomen y Pelvis sin contraste: $110 | Un contraste: $220 | Doble contraste: $385
 - TC de extremidades (mano, codo, antebrazo, clavícula, rodilla, pie, tobillo): $110 | Con contraste: $220
 
+**REQUISITO OBLIGATORIO PARA TOMOGRAFÍAS CON CONTRASTE:** Toda tomografía que use medio de contraste requiere presentar resultados de Urea y Creatinina con un máximo de 15 días de antigüedad. Sin estos resultados no se puede realizar el estudio. Siempre menciona este requisito cuando alguien pregunte por tomografías con contraste.
+
 ## PRECIOS – LABORATORIO (USD)
 - Hematología Completa: $8
 - Glicemia: $3 | Ácido Úrico en Sangre: $3 | Creatinina: $4 | BUN: $3
