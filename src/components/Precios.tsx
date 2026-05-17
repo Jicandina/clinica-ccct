@@ -125,7 +125,7 @@ export default function Precios() {
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-[11px] font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-              Sin cita previa · Atención directa Lun–Sáb
+              Sin cita previa · Atención directa Lun–Dom
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-verde-500/10 border border-verde-500/20 text-verde-400 text-[11px] font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-verde-400" />

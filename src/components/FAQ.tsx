@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: '¿Cuál es el horario de atención?',
-    a: 'Atendemos de lunes a sábado de 7:00 am a 5:00 pm. Puedes escribirnos por WhatsApp fuera del horario y te responderemos apenas abramos.',
+    a: 'Laboratorio e Imagenología: lunes a domingo de 7:00 am a 6:00 pm. Consultas médicas: lunes a sábado de 7:00 am a 7:00 pm. Emergencia: 24 horas todos los días. Puedes escribirnos por WhatsApp fuera del horario y te responderemos apenas abramos.',
   },
   {
     q: '¿Puedo pagar en dólares o en bolívares?',

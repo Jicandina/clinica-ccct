@@ -76,7 +76,7 @@ export default function Contacto() {
               {
                 icon: Clock,
                 titulo: 'Horario de atención',
-                texto: 'Lunes a Sábado · 7:00 am – 7:00 pm',
+                texto: 'Lab e Imágenes: Lun–Dom 7am–6pm · Consultas: Lun–Sáb · Emergencia: 24h',
               },
               {
                 icon: CreditCard,

@@ -60,16 +60,16 @@ export default function Mapa() {
                   <p className="text-white/30 text-[10px] font-semibold uppercase tracking-widest mb-3">Horario</p>
                   <div className="space-y-2.5">
                     <div className="flex justify-between text-sm py-1 border-b border-white/5">
-                      <span className="text-white/60">Lunes – Viernes</span>
-                      <span className="text-verde-400 font-semibold">7:00 – 19:00</span>
+                      <span className="text-white/60">Consultas</span>
+                      <span className="text-verde-400 font-semibold">Lun–Sáb · 7:00–19:00</span>
                     </div>
                     <div className="flex justify-between text-sm py-1 border-b border-white/5">
-                      <span className="text-white/60">Sábado</span>
-                      <span className="text-verde-400 font-semibold">7:00 – 19:00</span>
+                      <span className="text-white/60">Lab e Imágenes</span>
+                      <span className="text-verde-400 font-semibold">Lun–Dom · 7:00–18:00</span>
                     </div>
                     <div className="flex justify-between text-sm py-1">
-                      <span className="text-white/60">Domingo</span>
-                      <span className="text-white/30">Cerrado</span>
+                      <span className="text-white/60">Emergencia</span>
+                      <span className="text-red-400 font-semibold">24 horas</span>
                     </div>
                   </div>
                 </div>

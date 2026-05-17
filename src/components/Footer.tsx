@@ -53,7 +53,8 @@ export default function Footer() {
               >
                 +58 424 168 4657
               </a>
-              <p>Lun–Sáb · 7:00 am – 7:00 pm</p>
+              <p>Lab & Imágenes: Lun–Dom · 7:00 am – 6:00 pm</p>
+              <p className="text-red-400 font-medium">Emergencia: 24 horas</p>
             </div>
           </div>
         </div>
