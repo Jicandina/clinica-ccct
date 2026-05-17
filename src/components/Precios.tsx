@@ -245,19 +245,13 @@ function FilaServicio({ servicio, tasa, zebra, expanded, onToggle, sinCita, mism
             <Info className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${expanded ? 'text-verde-400' : 'text-white/20 group-hover:text-verde-400/60'}`} />
           )}
           {sinCita && (
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/25 whitespace-nowrap flex-shrink-0">
-              Sin cita
-            </span>
+            <span title="Sin cita previa" className="w-2 h-2 rounded-full bg-sky-400 flex-shrink-0 inline-block" />
           )}
           {servicio.sinAyuno && (
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-verde-500/15 text-verde-400 border border-verde-500/25 whitespace-nowrap flex-shrink-0">
-              Sin ayuno
-            </span>
+            <span title="Sin ayuno" className="w-2 h-2 rounded-full bg-verde-400 flex-shrink-0 inline-block" />
           )}
           {mismodia && (
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25 whitespace-nowrap flex-shrink-0">
-              Mismo día
-            </span>
+            <span title="Resultados mismo día" className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0 inline-block" />
           )}
         </div>
         <div className="col-span-2 text-right">
