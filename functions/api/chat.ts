@@ -189,6 +189,12 @@ Para exámenes de laboratorio no listados, el paciente puede consultar en recepc
 - Carrero Jorwin (Urología): Lunes y Miércoles 8AM–12PM
 - Medina José (Urología): Lun, Mié y Vie 2PM–5PM
 
+## TIEMPOS DE ENTREGA DE RESULTADOS
+- Laboratorio de rutina: listos el mismo día.
+- Pruebas especiales de laboratorio: entre 7 y 12 días hábiles.
+- Estudios de imagen (ecosonogramas, radiografías, tomografías): las imágenes se entregan de forma inmediata.
+- Informe escrito del radiólogo: listo en 72 horas hábiles.
+
 ## FLUJO DE AGENDAMIENTO DE CITAS
 Cuando el usuario quiera agendar una cita, sigue estos pasos UNO A UNO. No pidas varios datos a la vez:
 1. Pregunta su nombre completo

@@ -131,6 +131,30 @@ export default function Precios() {
               <span className="w-1.5 h-1.5 rounded-full bg-verde-400" />
               Los marcados con <span className="font-bold ml-1">Sin ayuno</span>&nbsp;puedes hacerlos de inmediato
             </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              {cat === 'lab' ? 'Resultados: mismo día · Pruebas especiales: 7–12 días hábiles' : 'Resultados: mismo día · Pruebas especiales: 7–12 días hábiles'}
+            </span>
+          </motion.div>
+        )}
+
+        {/* Banner contextual para Imágenes */}
+        {(cat === 'eco' || cat === 'rx' || cat === 'tc') && (
+          <motion.div
+            key={cat + '-banner'}
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+            className="flex flex-wrap items-center justify-center gap-2 mb-4"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-[11px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              Imágenes: entrega inmediata
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              Informe del radiólogo: 72 horas hábiles
+            </span>
           </motion.div>
         )}
 

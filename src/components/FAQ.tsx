@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: '¿Cuánto tiempo tarda en estar listo mi resultado?',
-    a: 'La mayoría de los exámenes de laboratorio están listos el mismo día. Los estudios de imagen como ecosonogramas y radiografías se entregan al momento. Las tomografías pueden tomar entre 24 y 48 horas.',
+    a: 'Los exámenes de laboratorio de rutina están listos el mismo día. Las pruebas especiales de laboratorio pueden tomar entre 7 y 12 días hábiles. Los estudios de imagen (ecosonogramas, radiografías, tomografías) se entregan de forma inmediata. El informe escrito del radiólogo está listo en 72 horas hábiles.',
   },
   {
     q: '¿Aceptan seguros médicos o HCM?',
