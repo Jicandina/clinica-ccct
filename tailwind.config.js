@@ -16,6 +16,18 @@ export default {
           800: '#0e360e',
           900: '#092409',
         },
+        sky: {
+          400: '#38bdf8',
+          500: '#0ea5e9',
+        },
+        amber: {
+          400: '#fbbf24',
+          500: '#f59e0b',
+        },
+        red: {
+          400: '#f87171',
+          500: '#ef4444',
+        },
       },
       fontFamily: {
         sans: ['Figtree', 'system-ui', 'sans-serif'],
