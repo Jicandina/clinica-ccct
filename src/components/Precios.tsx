@@ -207,6 +207,8 @@ export default function Precios() {
                   zebra={i % 2 === 0}
                   expanded={expanded === s.nombre}
                   onToggle={() => setExpanded(expanded === s.nombre ? null : s.nombre)}
+                  sinCita={cat === 'lab' || cat === 'perf'}
+                  mismodia={cat === 'lab' || cat === 'perf'}
                 />
               ))}
             </motion.div>
@@ -226,8 +228,9 @@ export default function Precios() {
   )
 }
 
-function FilaServicio({ servicio, tasa, zebra, expanded, onToggle }: {
+function FilaServicio({ servicio, tasa, zebra, expanded, onToggle, sinCita, mismodia }: {
   servicio: Servicio; tasa: number; zebra: boolean; expanded: boolean; onToggle: () => void
+  sinCita?: boolean; mismodia?: boolean
 }) {
   const hasReq = !!servicio.requerimientos
   return (
@@ -241,9 +244,19 @@ function FilaServicio({ servicio, tasa, zebra, expanded, onToggle }: {
           {hasReq && (
             <Info className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${expanded ? 'text-verde-400' : 'text-white/20 group-hover:text-verde-400/60'}`} />
           )}
+          {sinCita && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/25 whitespace-nowrap flex-shrink-0">
+              Sin cita
+            </span>
+          )}
           {servicio.sinAyuno && (
             <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-verde-500/15 text-verde-400 border border-verde-500/25 whitespace-nowrap flex-shrink-0">
               Sin ayuno
+            </span>
+          )}
+          {mismodia && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25 whitespace-nowrap flex-shrink-0">
+              Mismo día
             </span>
           )}
         </div>
